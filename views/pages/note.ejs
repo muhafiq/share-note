@@ -1,0 +1,24 @@
+<main class="min-h-screen flex justify-center md:items-center p-8 bg-white">
+  <div class="bg-secondary flex flex-col rounded-md shadow-xl md:w-4/5 md:h-5/6">
+    <div class="flex flex-col gap-2 p-4 text-white md:flex-row md:items-center">
+      <p>Link: <span class="py-1 px-2 bg-primary rounded-full">/<%= note.link %></span></p>
+      <p id="duration" class="py-1 px-2 bg-gray-300 rounded-full text-black"></p>
+      <form action="/note/set-password?_method=PUT" class="flex flex-col gap-1 md:flex-row" method="post">
+        <input class="py-1 px-2 text-black outline-none rounded" placeholder="Set password..." type="password" id="password" name="password">
+        <button class="self-start bg-primary p-2 rounded-md hover:bg-accent duration-150" type="submit">Submit</button>
+        <input type="hidden" name="noteLink" id="noteLink" value="<%= note.link %>">
+      </form>
+    </div>
+    <textarea
+    class="min-w-[22rem] min-h-96 bg-gray-300 outline-none flex-1 p-4 rounded-b-md resize-none"
+    id="note"
+    type="text"
+    placeholder="Place your note...."
+    ><%= note.content %></textarea>
+  </div>
+  <input type="hidden" id="link" name="link" value="<%= note.deleteAt %>">
+</main>
+
+<script src="/scripts/note.js"></script>
+
+

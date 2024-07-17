@@ -1,0 +1,25 @@
+<main class="min-h-screen p-8 flex justify-center items-center bg-white">
+  <div class="p-8 bg-gray-300 rounded-md shadow-xl">
+    <h1 class="mb-4 text-xl font-bold">
+      This note is protected with password.
+    </h1>
+    <form id="form" method="post">
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="p-4 rounded-full shadow outline-primary mr-2"
+        placeholder="Input the password..."
+      />
+      <button
+        type="submit"
+        class="py-4 px-6 bg-primary text-white font-bold shadow-md hover:bg-accent duration-150 rounded-full"
+      >
+        Submit
+      </button>
+    </form>
+    <% if (typeof error !== 'undefined' && error) { %>
+    <p class="text-red-500 text-sm"><%= error %></p>
+    <% } %>
+  </div>
+</main>

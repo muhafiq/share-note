@@ -1,0 +1,52 @@
+<header
+  class="bg-white px-8 py-6 flex items-center justify-between relative z-[2] shadow-md"
+>
+  <div>
+    <a class="font-bold text-2xl select-none" href="/"
+      ><i class="fa-solid fa-book"></i> Share Notes</a
+    >
+  </div>
+  <div class="md:hidden">
+    <button
+      id="dropdown-btn"
+      onclick="document.getElementById('dropdown-menu').classList.toggle('hidden')"
+    >
+      <i class="fa-solid fa-bars text-2xl"></i>
+    </button>
+
+    <div
+      id="dropdown-menu"
+      class="hidden absolute right-0 top-full z-10 min-w-48 w-full bg-white py-2 shadow-md"
+    >
+      <ul>
+        <li>
+          <a class="block px-8 py-2 hover:bg-primary" href="/"
+            ><i class="fa-solid fa-home"></i> Home</a
+          >
+        </li>
+        <li>
+          <a class="block px-8 py-2 hover:bg-primary" href="/about"
+            ><i class="fa-solid fa-users"></i> About</a
+          >
+        </li>
+        <li>
+          <a class="block px-8 py-2 hover:bg-primary" href="/pricing"
+            ><i class="fa-solid fa-tags"></i> Pricing</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ul class="md:flex items-center gap-4 hidden">
+    <li><a class="hover:text-primary" href="/">Home</a></li>
+    <li><a class="hover:text-primary" href="/about">About</a></li>
+    <li>
+      <a
+        class="px-4 py-2 border border-secondary rounded shadow-sm hover:text-black hover:bg-primary hover:border-primary duration-150"
+        href="/pricing"
+        >Pricing</a
+      >
+    </li>
+  </ul>
+</header>

@@ -1,0 +1,75 @@
+<main class="bg-white">
+
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div id="notif" class="w-96 text-sm md:text-base absolute z-20 right-1/2 translate-x-1/2 top-24 flex items-center justify-between gap-4 p-4 bg-gray-200 shadow-lg rounded-md">
+      <i class="fa-solid fa-circle-exclamation text-3xl text-red-600"></i>
+      <p><%= error %></p>
+      <i id="closeBtn" class="fa-solid fa-circle-xmark cursor-pointer"></i>
+    </div>
+  <% } %>
+
+  <section
+    class="relative p-8 min-h-screen flex flex-col-reverse justify-center items-center gap-8 md:gap-16 lg:gap-36 md:flex-row md:justify-center overflow-x-hidden"
+  >
+    <img
+      src="/images/hero-bg.svg"
+      alt="hero background"
+      class="absolute opacity-5 top-0 left-[-4rem] pointer-events-none hidden md:block"
+    />
+    <img
+      src="/images/hero-bg.svg"
+      alt="hero background"
+      class="absolute opacity-5 top-0 right-[-4rem] pointer-events-none"
+    />
+    <div class="relative z-[2]">
+      <h1 class="mb-6 text-3xl font-bold max-w-sm md:max-w-xl md:text-5xl">
+        Quick Way to Share Your Notes
+      </h1>
+      <form action="/note/create" method="post" class="flex flex-col gap-4">
+        <label for="link" class="w-full relative inline-flex">
+          <span class="p-4 bg-primary rounded-full shadow-md absolute font-bold"
+            >domain.com/</span
+          >
+          <input
+            type="text"
+            name="link"
+            id="link"
+            class="w-full bg-gray-100 pl-36 p-4 rounded-full outline-none shadow-md"
+            placeholder="Your note link"
+            autocomplete="off"
+            required
+          />
+        </label>
+
+        <label for="duration" class="w-1/2 relative">
+          <i
+            class="fa-solid fa-angle-down absolute right-6 top-1/2 -translate-y-1/2"
+          ></i>
+          <select
+            name="duration"
+            id="duration"
+            class="self-start w-full py-4 px-6 rounded-full bg-gray-100 outline-primary shadow appearance-none"
+          >
+            <option value="5" selected>5 Minutes</option>
+            <option value="15">15 Minutes</option>
+            <option value="60">1 Hour</option>
+            <option value="1440">1 Day</option>
+            <option value="un">Not deleted</option>
+          </select>
+        </label>
+        <button
+          type="submit"
+          class="self-start py-4 px-8 rounded-full bg-secondary text-white font-bold shadow-md hover:bg-sec-accent duration-150"
+        >
+          Create
+        </button>
+      </form>
+    </div>
+    <div class="relative z-[1]">
+      <img class="max-w-72 md:max-w-96 md:block" src="/images/hero.svg" alt="hero image" />
+    </div>
+  </section>
+  <!-- <section class="min-h-screen"></section> -->
+</main>
+
+<script src="/scripts/home.js"></script>
